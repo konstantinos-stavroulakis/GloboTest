@@ -91,27 +91,38 @@ public class MainActivity extends AppCompatActivity {
 
     }//end onCreate
 
-    public void startDownloadService(){
-
-//service start -----
+    public void DownloadJson() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(DownloadService.TRANSACTION_DONE);
         registerReceiver(jsonReceiver, intentFilter);
         Intent i = new Intent(this, DownloadService.class);
-        i.putExtra("url",url);
+        i.putExtra("url", url);
         startService(i);
-        pd = ProgressDialog.show(this, "Fetching json",
-                "Go intent service go!");
+    }
 
-//------
+    public void startDownloadService() {
+
+        DownloadJson();
+        pd = ProgressDialog.show(this, "Fetching json", "Go intent service go!");
+
+    }
+
+    @Override
+    public void onDestroy() {
+        // TODO Auto-generated method stub
+
+        try {
+
+            unregisterReceiver(jsonReceiver);
+        } catch (Exception e) {
+
+        }
+        super.onDestroy();
+
     }
 
     private void refreshContent() {
-        startDownloadService();
-
-
-        mSwipeRefreshLayout.setRefreshing(false);
-
+        DownloadJson();
     }
 
 
@@ -120,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String location = intent.getExtras().getString("location");
             String url = intent.getExtras().getString("url");
-            Log.d("---location---",location);
-            Log.d("---url---",url);
+            Log.d("---location---", location);
+            Log.d("---url---", url);
 
             if (location == null || location.length() == 0) {
                 Toast.makeText(context, "Failed to download json",
@@ -130,7 +141,16 @@ public class MainActivity extends AppCompatActivity {
 
             setmAdapter();
 
-            pd.dismiss();
+            if (mSwipeRefreshLayout.isRefreshing()) {
+                mSwipeRefreshLayout.setRefreshing(false);
+                Log.d("jsonReceiver", "mSwipeRefreshLayout hidden");
+            }
+
+            if (pd.isShowing()) {
+                pd.dismiss();
+                Log.d("jsonReceiver", "pd dismissed");
+
+            }
         }
     };
 
@@ -141,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new ListAdapter(MainActivity.this, entry.getData());
         mListView.setAdapter(mAdapter);
         entry.close();
+
     }
 
 }

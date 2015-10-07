@@ -18,7 +18,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="gr.apphub.globotest.MainActivity" >
+        <activity
+            android:name="gr.apphub.globotest.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +40,7 @@
         <!-- Declaring Service in Manifest -->
         <service
             android:name="gr.apphub.globotest.DownloadService"
-            android:enabled="true"
-            android:exported="false" />
+            android:configChanges="keyboardHidden|orientation" />
     </application>
 
 </manifest>
