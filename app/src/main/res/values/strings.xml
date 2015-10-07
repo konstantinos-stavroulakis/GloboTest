@@ -2,4 +2,21 @@
     <string name="app_name">GloboTest</string>
     <string name="title_activity_main2">Main2Activity</string>
 
+    <!--card item text -->
+    <string name="name">Name</string>
+    <string name="text">Text</string>
+    <string name="rarity">Rarity</string>
+    <string name="type">Type</string>
+    <string name="set">Set</string>
+    <string name="collectible">Collectible</string>
+    <string name="howToGet">How to get</string>
+    <string name="howToGetGold">How to get gold</string>
+    <string name="flavor">Flavor</string>
+    <string name="artist">Artist</string>
+    <string name="elite">Elite</string>
+    <string name="cost">Cost</string>
+    <string name="attack">Attack</string>
+    <string name="health">Health</string>
+    <string name="id">Card Id:</string>
+
 </resources>

@@ -30,16 +30,18 @@ public class DatabaseActivity {
         static final String FACTION = "faction";
         static final String RARITY = "rarity";
         static final String COST = "cost";
-        static final String ATTACH = "attach";
+        static final String ATTACK = "attack";
         static final String HEALTH = "health";
         static final String TEXT = "text";
         static final String ARTIST = "artist";
         static final String COLLECTIBLE = "collectible";
-        static final String ELIT = "elit";
+        static final String ELITE = "ELITE";
         static final String IMG = "img";
         static final String IMGGOLD = "imggold";
         static final String LOCALE = "locale";
         static final String MECHANICS = "mechanics";
+        static final String HOWTOGET = "howToGet";
+        static final String FLAVOR = "flavor";
 
 
         public DBHelper(Context context) {
@@ -50,9 +52,9 @@ public class DatabaseActivity {
             db.execSQL("CREATE TABLE " + DATABASE_TABLE + " (" + ROWID
                     + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CARDID
                     + " TEXT , " + NAME + " TEXT ,  " + CARDSET + " TEXT ,  " + TYPE + " TEXT ,  " + FACTION + " TEXT ,  "
-                    + RARITY + " TEXT ,  " + COST + " TEXT ,  " + ATTACH + " TEXT ,  " + HEALTH + " TEXT ,  " + TEXT + " TEXT ,  "
-                    + ARTIST + " TEXT ,  " + COLLECTIBLE + " TEXT ,  " + ELIT + " TEXT ,  " + IMG + " TEXT ,  " + IMGGOLD + " TEXT ,  "
-                    + LOCALE + " TEXT ,  " + MECHANICS + " TEXT);");
+                    + RARITY + " TEXT ,  " + COST + " TEXT ,  " + ATTACK + " TEXT ,  " + HEALTH + " TEXT ,  " + TEXT + " TEXT ,  "
+                    + ARTIST + " TEXT ,  " + COLLECTIBLE + " TEXT ,  " + ELITE + " TEXT ,  " + IMG + " TEXT ,  " + IMGGOLD + " TEXT ,  "
+                    + LOCALE + " TEXT ,  " + MECHANICS + " TEXT ,  " + HOWTOGET + " TEXT ,  " + FLAVOR + " TEXT);");
 
         }
 
@@ -81,7 +83,7 @@ public class DatabaseActivity {
         ourHelper.close();
     }
 
-    public void createEntry(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attach, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics) {
+    public void createEntry(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String ATTACK, String health, String text, String artist, String collectible, String ELITE, String img, String imggold, String locale, String mechanics,String howToGet,String flavor) {
 
         try {
             ContentValues cv = new ContentValues();
@@ -92,16 +94,18 @@ public class DatabaseActivity {
             cv.put(DBHelper.FACTION, faction);
             cv.put(DBHelper.RARITY, rarity);
             cv.put(DBHelper.COST, cost);
-            cv.put(DBHelper.ATTACH, attach);
+            cv.put(DBHelper.ATTACK, ATTACK);
             cv.put(DBHelper.HEALTH, health);
             cv.put(DBHelper.TEXT, text);
             cv.put(DBHelper.ARTIST, artist);
             cv.put(DBHelper.COLLECTIBLE, collectible);
-            cv.put(DBHelper.ELIT, elit);
+            cv.put(DBHelper.ELITE, ELITE);
             cv.put(DBHelper.IMG, img);
             cv.put(DBHelper.IMGGOLD, imggold);
             cv.put(DBHelper.LOCALE, locale);
             cv.put(DBHelper.MECHANICS, mechanics);
+            cv.put(DBHelper.HOWTOGET, howToGet);
+            cv.put(DBHelper.FLAVOR, flavor);
 
 
             ourDatabase.insert(DBHelper.DATABASE_TABLE, null, cv);
@@ -115,7 +119,7 @@ public class DatabaseActivity {
       public Cursor getData() {
 
         String[] columns = new String[]{DBHelper.ROWID, DBHelper.CARDID, DBHelper.NAME, DBHelper.CARDSET, DBHelper.TYPE, DBHelper.FACTION, DBHelper.RARITY, DBHelper.COST
-                , DBHelper.ATTACH, DBHelper.HEALTH, DBHelper.TEXT, DBHelper.ARTIST, DBHelper.COLLECTIBLE, DBHelper.ELIT, DBHelper.IMG, DBHelper.IMGGOLD, DBHelper.LOCALE, DBHelper.MECHANICS};
+                , DBHelper.ATTACK, DBHelper.HEALTH, DBHelper.TEXT, DBHelper.ARTIST, DBHelper.COLLECTIBLE, DBHelper.ELITE, DBHelper.IMG, DBHelper.IMGGOLD, DBHelper.LOCALE, DBHelper.MECHANICS,DBHelper.HOWTOGET,DBHelper.FLAVOR};
         Cursor c = ourDatabase.query(DBHelper.DATABASE_TABLE, columns, null,
                 null, null, null,null);
         return c;
@@ -130,7 +134,7 @@ public class DatabaseActivity {
     }
     public String getCardIdFromPosition(int position){
         String[] columns = new String[]{DBHelper.ROWID, DBHelper.CARDID, DBHelper.NAME, DBHelper.CARDSET, DBHelper.TYPE, DBHelper.FACTION, DBHelper.RARITY, DBHelper.COST
-                , DBHelper.ATTACH, DBHelper.HEALTH, DBHelper.TEXT, DBHelper.ARTIST, DBHelper.COLLECTIBLE, DBHelper.ELIT, DBHelper.IMG, DBHelper.IMGGOLD, DBHelper.LOCALE, DBHelper.MECHANICS};
+                , DBHelper.ATTACK, DBHelper.HEALTH, DBHelper.TEXT, DBHelper.ARTIST, DBHelper.COLLECTIBLE, DBHelper.ELITE, DBHelper.IMG, DBHelper.IMGGOLD, DBHelper.LOCALE, DBHelper.MECHANICS,DBHelper.HOWTOGET,DBHelper.FLAVOR};
         Cursor c = ourDatabase.query(DBHelper.DATABASE_TABLE, columns, null,
                 null, null, null,null);
         c.moveToPosition(position);

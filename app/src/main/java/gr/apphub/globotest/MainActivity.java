@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String FACTION = "faction";
     private static final String RARITY = "rarity";
     private static final String COST = "cost";
-    private static final String ATTACH = "attach";
+    private static final String ATTACK = "ATTACK";
     private static final String HEALTH = "health";
     private static final String TEXT = "text";
     private static final String ARTIST = "artist";
@@ -164,4 +164,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

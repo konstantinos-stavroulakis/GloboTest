@@ -38,9 +38,10 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#b99e80</color>
+    <color name="colorAccent2">#8f7b65</color>
+    <color name="colorPrimary">#795548</color>
+    <color name="colorPrimaryDark">#5D4037</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
@@ -58,6 +59,11 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="divider">#B6B6B6</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
@@ -69,6 +75,12 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="icons">#FFFFFF</color>
+    <color name="itemBg">#a69485</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -83,19 +95,35 @@
     <color name="material_grey_900">#ff212121</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
     <eat-comment/>
+    <color name="nameColor">#34352c</color>
     <color name="orange">#FF9900</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="primary_light">#D7CCC8</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="primary_material_dark">@color/material_grey_900</color>
     <color name="primary_material_light">@color/material_grey_100</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="primary_text">#212121</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="primary_text_default_material_dark">#ffffffff</color>
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="ripple_material_dark">#42ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="secondary_text">#504f4f</color>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
@@ -255,6 +283,14 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_xlarge">22sp</dimen>
+    <dimen name="text_xsmall">14sp</dimen>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -303,12 +339,29 @@
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="artist">Artist</string>
+    <string name="attack">Attack</string>
+    <string name="collectible">Collectible</string>
+    <string name="cost">Cost</string>
+    <string name="elite">Elite</string>
+    <string name="flavor">Flavor</string>
+    <string name="health">Health</string>
+    <string name="howToGet">How to get</string>
+    <string name="howToGetGold">How to get gold</string>
+    <string name="id">Card Id:</string>
+    <string name="name">Name</string>
+    <string name="rarity">Rarity</string>
+    <string name="set">Set</string>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="text">Text</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="type">Type</string>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

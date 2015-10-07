@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:1-40:12
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:1-52:12
 	xmlns:android
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -22,7 +22,7 @@ ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/Andr
 	android:name
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:7:22-78
 application
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:9:5-38:19
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:9:5-50:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
@@ -46,38 +46,54 @@ ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/Andr
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:17:13-74
 	android:name
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:16:13-41
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT
 ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
 ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:19:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:21:17-77
+category#android.intent.category.DEFAULT
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:21:17-76
 	android:name
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:21:27-74
-activity#gr.apphub.globotest.Main2Activity
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:24:9-32:20
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:21:27-73
+activity#gr.apphub.globotest.SplashActivity
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:24:9-35:20
 	android:label
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:26:13-57
-	android:theme
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:28:13-56
-	android:parentActivityName
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:27:13-55
-	android:name
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:25:13-42
-meta-data#android.support.PARENT_ACTIVITY
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:29:13-31:68
-	android:name
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:30:17-63
-	android:value
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:31:17-65
-service#gr.apphub.globotest.DownloadService
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:35:9-37:66
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:27:13-45
 	android:configChanges
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:37:13-63
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:26:13-74
+	android:theme
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:28:13-71
 	android:name
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:36:13-44
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:25:13-43
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:30:13-34:29
+category#android.intent.category.LAUNCHER
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:33:27-74
+activity#gr.apphub.globotest.Main2Activity
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:36:9-44:20
+	android:label
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:38:13-57
+	android:theme
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:40:13-56
+	android:parentActivityName
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:39:13-55
+	android:name
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:37:13-42
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:41:13-43:68
+	android:name
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:42:17-63
+	android:value
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:43:17-65
+service#gr.apphub.globotest.DownloadService
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:47:9-49:66
+	android:configChanges
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:49:13-63
+	android:name
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:48:13-44
 uses-sdk
 INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43

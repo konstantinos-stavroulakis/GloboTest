@@ -41,9 +41,9 @@ public class ListAdapter extends CursorAdapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View convertView = inflater.inflate(R.layout.list_item, parent, false);
         ViewHolder holder = new ViewHolder();
-        holder.cardId = (TextView) convertView.findViewById(R.id.cardId);
-        holder.cardName = (TextView) convertView.findViewById(R.id.cardName);
-        holder.image = (ImageView) convertView.findViewById(R.id.cardImage);
+        holder.cardId = (TextView) convertView.findViewById(R.id.listItemCardId);
+        holder.cardName = (TextView) convertView.findViewById(R.id.listItemCardName);
+        holder.image = (ImageView) convertView.findViewById(R.id.listItemCardImage);
         convertView.setTag(holder);
 
         return convertView;

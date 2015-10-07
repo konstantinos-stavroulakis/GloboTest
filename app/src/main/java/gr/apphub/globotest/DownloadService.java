@@ -15,7 +15,7 @@ public class DownloadService extends IntentService {
             " gr.apphub.globotest.TRANSACTION_DONE";
     private static final String TAG = DownloadService.class.getSimpleName();
     private String url;
-    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACH, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELIT, IMG, IMGGOLD, LOCALE, MECHANICS;
+    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS,HOWTOGET,FLAVOR;
     public static final String INPUT_TEXT = "INPUT_TEXT";
     public static final String OUTPUT_TEXT = "OUTPUT_TEXT";
 
@@ -70,20 +70,21 @@ public class DownloadService extends IntentService {
                     }
                     RARITY = jObj.getString("rarity");
                     COST = Integer.toString(jObj.getInt("cost"));
-                    if (jObj.has("attach")) {
-                        ATTACH = Integer.toString(jObj.getInt("attach"));
+                    if (jObj.has("attack")) {
+                        ATTACK = Integer.toString(jObj.getInt("attack"));
                     } else {
-                        ATTACH = "-";
+                        ATTACK = "-";
                     }
                     HEALTH = Integer.toString(jObj.getInt("health"));
                     TEXT = jObj.getString("text");
                     ARTIST = jObj.getString("artist");
                     COLLECTIBLE = jObj.getString("collectible");
-                    if (jObj.has("elit")) {
 
-                        ELIT = jObj.getString("elit");
+                    if (jObj.has("elite")) {
+
+                        ELITE = jObj.getString("elite");
                     } else {
-                        ELIT = "-";
+                        ELITE = "-";
                     }
                     IMG = jObj.getString("img");
                     if (jObj.has("imggold")) {
@@ -100,8 +101,19 @@ public class DownloadService extends IntentService {
                         MECHANICS = "-";
                     }
 
+                    if (jObj.has("howToGet")) {
 
-                    addToDatabase(CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACH, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELIT, IMG, IMGGOLD, LOCALE, MECHANICS);
+                        HOWTOGET = jObj.getString("howToGet");
+                    } else {
+                        HOWTOGET = "-";
+                    }
+                    if (jObj.has("flavor")) {
+
+                        FLAVOR = jObj.getString("flavor");
+                    } else {
+                        FLAVOR = "-";
+                    }
+                    addToDatabase(CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS,HOWTOGET,FLAVOR);
 
                 }
             } catch (Exception e) {
@@ -114,14 +126,14 @@ public class DownloadService extends IntentService {
         }
     }
 
-    public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attach, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics) {
+    public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attack, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics,String howToGet,String flavor) {
         DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
         entry.open();
         if (entry.Exists(cardid, name)) {
             Log.d("card " + cardid, "exists to db");
 
         } else {
-            entry.createEntry(cardid, name, cardset, type, faction, rarity, cost, attach, health, text, artist, collectible, elit, img, imggold, locale, mechanics);
+            entry.createEntry(cardid, name, cardset, type, faction, rarity, cost, attack, health, text, artist, collectible, elit, img, imggold, locale, mechanics,howToGet,flavor);
             Log.d("card " + cardid, "added to db");
 
         }
