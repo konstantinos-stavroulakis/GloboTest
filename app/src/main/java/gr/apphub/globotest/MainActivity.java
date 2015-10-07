@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
     ListView mListView;
     ListAdapter mAdapter;
     private ProgressDialog dialogfeed;
+    private static final String TAG = MainActivity.class.getName();
+    String url;
 
-    String url = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary?collectible=1&locale=enUS";
+    private Menu optionsMenu;
 
     private static final String CARDID = "cardId";
     private static final String NAME = "name";
@@ -45,13 +50,22 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOCALE = "locale";
     private static final String MECHANICS = "mechanics";
     JSONArray json = null;
-    ProgressDialog pd;
-//TODO comment ola ta Log.
+
+
+    //TODO comment ola ta Log.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "**********onCreate();***********");
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            url = extras.get("url").toString();
+        }
 
         // Create global configuration and initialize ImageLoader with this config
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
@@ -68,10 +82,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        new AsyncLoadXMLFeed().execute();
 
-        startDownloadService();
-
+//        startDownloadService();
+        setmAdapter();
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -89,9 +102,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }//end onCreate
+    }//end onCrate
+
 
     public void DownloadJson() {
+
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(DownloadService.TRANSACTION_DONE);
         registerReceiver(jsonReceiver, intentFilter);
@@ -100,12 +115,6 @@ public class MainActivity extends AppCompatActivity {
         startService(i);
     }
 
-    public void startDownloadService() {
-
-        DownloadJson();
-        pd = ProgressDialog.show(this, "Fetching json", "Go intent service go!");
-
-    }
 
     @Override
     public void onDestroy() {
@@ -141,16 +150,11 @@ public class MainActivity extends AppCompatActivity {
 
             setmAdapter();
 
-            if (mSwipeRefreshLayout.isRefreshing()) {
-                mSwipeRefreshLayout.setRefreshing(false);
-                Log.d("jsonReceiver", "mSwipeRefreshLayout hidden");
-            }
+            mSwipeRefreshLayout.setRefreshing(false);
+            Log.d("jsonReceiver", "mSwipeRefreshLayout hidden");
+            setRefreshActionButtonstate(false);
 
-            if (pd.isShowing()) {
-                pd.dismiss();
-                Log.d("jsonReceiver", "pd dismissed");
 
-            }
         }
     };
 
@@ -167,5 +171,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        Log.d(TAG, "***********onResume();***********");
+    }
+
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        this.optionsMenu = menu;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_load:
+                setRefreshActionButtonstate(true);
+                DownloadJson();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public void setRefreshActionButtonstate(final boolean refreshing) {
+        if (optionsMenu != null) {
+            final MenuItem refreshItem = optionsMenu
+                    .findItem(R.id.menu_load);
+            if (refreshItem != null) {
+                if (refreshing) {
+                    refreshItem.setActionView(R.layout.progressbar);
+                } else {
+                    refreshItem.setActionView(null);
+                }
+            }
+        }
     }
 }

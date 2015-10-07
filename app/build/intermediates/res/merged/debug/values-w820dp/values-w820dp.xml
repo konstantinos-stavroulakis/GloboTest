@@ -2,5 +2,5 @@
 <resources>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
-    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
 </resources>

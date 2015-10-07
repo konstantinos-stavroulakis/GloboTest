@@ -15,7 +15,7 @@ public class DownloadService extends IntentService {
             " gr.apphub.globotest.TRANSACTION_DONE";
     private static final String TAG = DownloadService.class.getSimpleName();
     private String url;
-    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS,HOWTOGET,FLAVOR;
+    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET, FLAVOR;
     public static final String INPUT_TEXT = "INPUT_TEXT";
     public static final String OUTPUT_TEXT = "OUTPUT_TEXT";
 
@@ -58,27 +58,83 @@ public class DownloadService extends IntentService {
                     //TODO add if(.has()) everywhere
                     JSONObject jObj = jsonArray.getJSONObject(i);
 
-                    CARDID = jObj.getString("cardId");
-                    NAME = jObj.getString("name");
-                    CARDSET = jObj.getString("cardSet");
-                    TYPE = jObj.getString("type");
+                    if (jObj.has("cardId")) {
+                        CARDID = jObj.getString("cardId");
+                    } else {
+                        CARDID = "";
+                    }
+
+                    if (jObj.has("name")) {
+                        NAME = jObj.getString("name");
+                    } else {
+                        NAME = "-";
+                    }
+
+                    if (jObj.has("cardSet")) {
+                        CARDSET = jObj.getString("cardSet");
+                    } else {
+                        CARDSET = "-";
+                    }
+
+                    if (jObj.has("type")) {
+                        TYPE = jObj.getString("type");
+                    } else {
+                        TYPE = "-";
+                    }
+
                     if (jObj.has("faction")) {
 
                         FACTION = jObj.getString("faction");
                     } else {
                         FACTION = "-";
                     }
-                    RARITY = jObj.getString("rarity");
-                    COST = Integer.toString(jObj.getInt("cost"));
+
+                    if (jObj.has("rarity")) {
+
+                        RARITY = jObj.getString("rarity");
+                    } else {
+                        RARITY = "-";
+                    }
+
+                    if (jObj.has("cost")) {
+
+                        COST = jObj.getString("cost");
+                    } else {
+                        COST = "-";
+                    }
+
                     if (jObj.has("attack")) {
                         ATTACK = Integer.toString(jObj.getInt("attack"));
                     } else {
                         ATTACK = "-";
                     }
-                    HEALTH = Integer.toString(jObj.getInt("health"));
-                    TEXT = jObj.getString("text");
-                    ARTIST = jObj.getString("artist");
-                    COLLECTIBLE = jObj.getString("collectible");
+
+                    if (jObj.has("health")) {
+                        HEALTH = Integer.toString(jObj.getInt("health"));
+                    } else {
+                        HEALTH = "-";
+                    }
+
+                    if (jObj.has("text")) {
+
+                        TEXT = jObj.getString("text");
+                    } else {
+                        TEXT = "-";
+                    }
+
+                    if (jObj.has("artist")) {
+
+                        ARTIST = jObj.getString("artist");
+                    } else {
+                        ARTIST = "-";
+                    }
+
+                    if (jObj.has("collectible")) {
+
+                        COLLECTIBLE = jObj.getString("collectible");
+                    } else {
+                        COLLECTIBLE = "-";
+                    }
 
                     if (jObj.has("elite")) {
 
@@ -86,14 +142,28 @@ public class DownloadService extends IntentService {
                     } else {
                         ELITE = "-";
                     }
-                    IMG = jObj.getString("img");
+
+                    if (jObj.has("img")) {
+
+                        IMG = jObj.getString("img");
+                    } else {
+                        IMG = "-";
+                    }
+
                     if (jObj.has("imggold")) {
 
                         IMGGOLD = jObj.getString("imggold");
                     } else {
                         IMGGOLD = "-";
                     }
-                    LOCALE = jObj.getString("locale");
+
+                    if (jObj.has("locale")) {
+
+                        LOCALE = jObj.getString("locale");
+                    } else {
+                        LOCALE = "-";
+                    }
+
                     if (jObj.has("mechanics")) {
 
                         MECHANICS = jObj.getString("mechanics");
@@ -113,37 +183,33 @@ public class DownloadService extends IntentService {
                     } else {
                         FLAVOR = "-";
                     }
-                    addToDatabase(CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS,HOWTOGET,FLAVOR);
+
+
+                    addToDatabase(CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET, FLAVOR);
 
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            countEntriesInDb();
             notifyFinished("location", url);
 
         }
     }
 
-    public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attack, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics,String howToGet,String flavor) {
+    public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attack, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics, String howToGet, String flavor) {
         DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
         entry.open();
         if (entry.Exists(cardid, name)) {
             Log.d("card " + cardid, "exists to db");
 
         } else {
-            entry.createEntry(cardid, name, cardset, type, faction, rarity, cost, attack, health, text, artist, collectible, elit, img, imggold, locale, mechanics,howToGet,flavor);
+            entry.createEntry(cardid, name, cardset, type, faction, rarity, cost, attack, health, text, artist, collectible, elit, img, imggold, locale, mechanics, howToGet, flavor);
             Log.d("card " + cardid, "added to db");
 
         }
         entry.close();
     }
 
-    public void countEntriesInDb() {
-        DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
-        entry.open();
-        Log.d("TOTAL DB COUNT: ", Long.toString(entry.fetchPlacesCount()));
-        entry.close();
-    }
+
 }

@@ -39,6 +39,7 @@
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="colorAccent">#b99e80</color>
+    <color name="colorAccent0">#dccab7</color>
     <color name="colorAccent2">#8f7b65</color>
     <color name="colorPrimary">#795548</color>
     <color name="colorPrimaryDark">#5D4037</color>
@@ -352,7 +353,9 @@
     <string name="howToGetGold">How to get gold</string>
     <string name="id">Card Id:</string>
     <string name="name">Name</string>
+    <string name="nointernet">You are not connected to internet...</string>
     <string name="rarity">Rarity</string>
+    <string name="refresh">Refresh</string>
     <string name="set">Set</string>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>

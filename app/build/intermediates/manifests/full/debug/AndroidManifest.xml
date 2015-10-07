@@ -5,12 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="23" />
-    <!-- Include following permission if you load images from Internet -->
+    <!-- Connect to Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Include following permission if you want to cache images on SD card -->
+    <!-- Cache images on SD card -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Check internet connection -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="gr.apphub.globotest.MainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" >
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/itemBg"
+    android:background="@color/colorAccent0"
 
     android:scrollbars="none"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -31,7 +31,7 @@
                     android:id="@+id/cardImg"
                     android:layout_width="400dp"
                     android:layout_height="400dp" android:layout_gravity="center"
-                    android:src="@drawable/ic_stub" />
+                    android:src="@mipmap/ic_stub" />
         </LinearLayout>
 
         <TextView
