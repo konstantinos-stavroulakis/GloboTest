@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/debug/classes-a8ede944a00bcd729d45918d5156d09d7b5f4bfa.jar" />
+    </item>
+
+</items>
