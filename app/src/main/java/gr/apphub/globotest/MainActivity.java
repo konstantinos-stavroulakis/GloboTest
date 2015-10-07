@@ -1,13 +1,18 @@
 package gr.apphub.globotest;
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -40,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOCALE = "locale";
     private static final String MECHANICS = "mechanics";
     JSONArray json = null;
-
+    ProgressDialog pd;
 //TODO comment ola ta Log.
 
     @Override
@@ -64,15 +69,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 //        new AsyncLoadXMLFeed().execute();
-        Intent ImageDownloadService= new Intent(MainActivity.this, ImageDownloadService.class);
-// add necessary  data to intent
-// start service
-        startService(ImageDownloadService);
-        DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
-        entry.open();
-        mAdapter = new ListAdapter(MainActivity.this, entry.getData());
-        mListView.setAdapter(mAdapter);
-        entry.close();
+
+        startDownloadService();
+
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -92,11 +91,56 @@ public class MainActivity extends AppCompatActivity {
 
     }//end onCreate
 
-    private void refreshContent() {
-        Intent ImageDownloadService= new Intent(MainActivity.this, ImageDownloadService.class);
+    public void startDownloadService(){
 
-        startService(ImageDownloadService);
+//service start -----
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DownloadService.TRANSACTION_DONE);
+        registerReceiver(jsonReceiver, intentFilter);
+        Intent i = new Intent(this, DownloadService.class);
+        i.putExtra("url",url);
+        startService(i);
+        pd = ProgressDialog.show(this, "Fetching json",
+                "Go intent service go!");
+
+//------
+    }
+
+    private void refreshContent() {
+        startDownloadService();
+
 
         mSwipeRefreshLayout.setRefreshing(false);
 
-    }}
+    }
+
+
+    private BroadcastReceiver jsonReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String location = intent.getExtras().getString("location");
+            String url = intent.getExtras().getString("url");
+            Log.d("---location---",location);
+            Log.d("---url---",url);
+
+            if (location == null || location.length() == 0) {
+                Toast.makeText(context, "Failed to download json",
+                        Toast.LENGTH_LONG).show();
+            }
+
+            setmAdapter();
+
+            pd.dismiss();
+        }
+    };
+
+
+    public void setmAdapter() {
+        DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
+        entry.open();
+        mAdapter = new ListAdapter(MainActivity.this, entry.getData());
+        mListView.setAdapter(mAdapter);
+        entry.close();
+    }
+
+}

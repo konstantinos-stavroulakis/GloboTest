@@ -10,23 +10,36 @@ import org.json.JSONObject;
 /**
  * Created by Konstantinos on 07/10/15.
  */
-public class ImageDownloadService extends IntentService {
-
-    private static final String TAG = ImageDownloadService.class.getSimpleName();
-    String url = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary?collectible=1&locale=enUS";
+public class DownloadService extends IntentService {
+    public static final String TRANSACTION_DONE =
+            " gr.apphub.globotest.TRANSACTION_DONE";
+    private static final String TAG = DownloadService.class.getSimpleName();
+    private String url;
     String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACH, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELIT, IMG, IMGGOLD, LOCALE, MECHANICS;
     public static final String INPUT_TEXT = "INPUT_TEXT";
     public static final String OUTPUT_TEXT = "OUTPUT_TEXT";
 
-    public ImageDownloadService() {
-        super(ImageDownloadService.class.getSimpleName());
+    public DownloadService() {
+        super("DownloadService");
+
+
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
         Log.i(TAG, "onHandleIntent()");
+
         // get inputs from intent
+        url = intent.getExtras().getString("url");
+
         getDataFromJson();
+    }
+
+    private void notifyFinished(String location, String remoteUrl) {
+        Intent i = new Intent(TRANSACTION_DONE);
+        i.putExtra("location", location);
+        i.putExtra("url", remoteUrl);
+        DownloadService.this.sendBroadcast(i);
     }
 
     public void getDataFromJson() {
@@ -96,11 +109,13 @@ public class ImageDownloadService extends IntentService {
             }
 
             countEntriesInDb();
+            notifyFinished("location", url);
+
         }
     }
 
     public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attach, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics) {
-        DatabaseActivity entry = new DatabaseActivity(ImageDownloadService.this);
+        DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
         entry.open();
         if (entry.Exists(cardid, name)) {
             Log.d("card " + cardid, "exists to db");
@@ -114,7 +129,7 @@ public class ImageDownloadService extends IntentService {
     }
 
     public void countEntriesInDb() {
-        DatabaseActivity entry = new DatabaseActivity(ImageDownloadService.this);
+        DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
         entry.open();
         Log.d("TOTAL DB COUNT: ", Long.toString(entry.fetchPlacesCount()));
         entry.close();

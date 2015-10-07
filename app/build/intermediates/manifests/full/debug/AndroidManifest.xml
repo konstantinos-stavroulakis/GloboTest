@@ -37,7 +37,7 @@
 
         <!-- Declaring Service in Manifest -->
         <service
-            android:name="gr.apphub.globotest.ImageDownloadService"
+            android:name="gr.apphub.globotest.DownloadService"
             android:enabled="true"
             android:exported="false" />
     </application>
