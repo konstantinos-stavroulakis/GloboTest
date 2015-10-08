@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -27,6 +28,7 @@ import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    ConnectivityManager conMgr;
 
     ListView mListView;
     GridView mGridView;
@@ -69,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "**********onCreate();***********");
 
+        conMgr = (ConnectivityManager) this
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+
         displaySharedPreferences();
 
         Bundle extras = getIntent().getExtras();
@@ -94,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setListAdapter();
-//        startDownloadService();
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -107,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 intent.putExtra("cardid", cid);
                 startActivity(intent);
+
+
+                //AppCompat 21 Material Theme Style
+
+//                ActivityOptionsCompat options =
+//                        ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                                MainActivity.this, view, "cardid");
+//                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+//                intent.putExtra("cardid", cid);
+//                ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());
 
 
             }
@@ -146,17 +161,22 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
 
         try {
-
             unregisterReceiver(jsonReceiver);
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         super.onDestroy();
 
     }
 
     private void refreshContent() {
-        DownloadJson();
+        if (conMgr.getActiveNetworkInfo() != null) {
+            DownloadJson();
+        } else {
+            Toast.makeText(this, getString(R.string.nointernet), Toast.LENGTH_SHORT).show();
+            mSwipeRefreshLayout.setRefreshing(false);
+
+        }
     }
 
 
@@ -241,8 +261,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_load:
-                setRefreshActionButtonstate(true);
-                DownloadJson();
+                if (conMgr.getActiveNetworkInfo() != null) {
+                    setRefreshActionButtonstate(true);
+                    DownloadJson();
+                } else {
+                    Toast.makeText(this, getString(R.string.nointernet), Toast.LENGTH_SHORT).show();
+                    mSwipeRefreshLayout.setRefreshing(false);
+
+                }
                 return true;
             case R.id.settings:
 

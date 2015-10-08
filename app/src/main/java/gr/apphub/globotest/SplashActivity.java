@@ -37,14 +37,39 @@ public class SplashActivity extends Activity {
         if (conMgr.getActiveNetworkInfo() != null) {
 
             startDownloadService();
+
         } else {
+
+
+
             Toast.makeText(this, getString(R.string.nointernet), Toast.LENGTH_LONG).show();
 
             DatabaseActivity entry = new DatabaseActivity(SplashActivity.this);
             entry.open();
             if (entry.getData().getCount() > 0) {
                 //exei eggrafes stin vasi
-                goToMainActivity();
+
+                Thread splashTread = new Thread() {
+                    @Override
+                    public void run() {
+                        try {
+                            int waited = 0;
+                            while (_active && (waited < _splashTime)) {
+                                sleep(100);
+                                if (_active) {
+                                    waited += 100;
+                                }
+                            }
+                        } catch (InterruptedException e) {
+                            // do nothing
+                        } finally {
+                            finish();
+                            goToMainActivity();
+
+                        }
+                    }
+                };
+                splashTread.start();
 
             } else {
                 //i vasi einai adeia (prwti xrisi tis efarmogis dld)

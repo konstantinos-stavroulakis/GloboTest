@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 public class Main2Activity extends AppCompatActivity {
@@ -29,6 +30,11 @@ public class Main2Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Card Item");
 
+        if (!ImageLoader.getInstance().isInited()) {
+            // Create global configuration and initialize ImageLoader with this config
+            ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
+            ImageLoader.getInstance().init(config);
+        }
 
         Bundle extras = getIntent().getExtras();
         String cardid = extras.get("cardid").toString();
@@ -141,7 +147,9 @@ public class Main2Activity extends AppCompatActivity {
 
         ImageView im1 = (ImageView) findViewById(R.id.cardImg);
         ImageLoader.getInstance().displayImage(IMG, im1, options, animateFirstListener);
-
+//        YoYo.with(Techniques.ZoomIn)
+//                .duration(700)
+//                .playOn(findViewById(R.id.cardImg));
         entry.close();
 
     }
