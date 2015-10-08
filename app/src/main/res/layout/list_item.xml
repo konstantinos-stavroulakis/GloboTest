@@ -20,7 +20,10 @@
                 android:id="@+id/listItemCardImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
-
+            <!--<ImageView-->
+                <!--android:id="@+id/listItemCardImage"-->
+                <!--android:layout_width="match_parent" android:scaleType="center"-->
+                <!--android:layout_height="match_parent" />-->
         </LinearLayout>
 
         <LinearLayout

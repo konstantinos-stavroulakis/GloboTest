@@ -30,6 +30,7 @@ public class SplashActivity extends Activity {
 
         setContentView(R.layout.splash);
 
+
         conMgr = (ConnectivityManager) this
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 

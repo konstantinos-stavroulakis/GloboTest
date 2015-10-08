@@ -18,9 +18,11 @@
     <string name="attack">Attack</string>
     <string name="health">Health</string>
     <string name="id">Card Id:</string>
+    <string name="mechanics">Mechanics</string>
 
 
     <string name="nointernet">You are not connected to internet...</string>
     <string name="refresh">Refresh</string>
+    <string name="settings">Settings</string>
 
 </resources>

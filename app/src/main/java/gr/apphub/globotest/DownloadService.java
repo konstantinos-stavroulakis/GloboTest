@@ -18,6 +18,7 @@ public class DownloadService extends IntentService {
     String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET, FLAVOR;
     public static final String INPUT_TEXT = "INPUT_TEXT";
     public static final String OUTPUT_TEXT = "OUTPUT_TEXT";
+    String cardMechanincs;
 
     public DownloadService() {
         super("DownloadService");
@@ -166,9 +167,23 @@ public class DownloadService extends IntentService {
 
                     if (jObj.has("mechanics")) {
 
-                        MECHANICS = jObj.getString("mechanics");
+                        cardMechanincs = jObj.getString("mechanics");
+                        JSONArray jsonArray2 = new JSONArray(cardMechanincs);
+
+                        for (int k = 0; k < jsonArray2.length(); k++) {
+                            JSONObject jObj2 = jsonArray2.getJSONObject(k);
+                            String kl = jObj2.getString("name");
+                            if(k==0){
+                                MECHANICS =kl;
+
+                            }else{
+                                MECHANICS += ", "+kl;
+
+                            }
+                        }
+//                        MECHANICS  = jObj.getString("mechanics");
                     } else {
-                        MECHANICS = "-";
+                        MECHANICS  = "-";
                     }
 
                     if (jObj.has("howToGet")) {

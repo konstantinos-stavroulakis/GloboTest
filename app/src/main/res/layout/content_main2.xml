@@ -27,11 +27,12 @@
             android:layout_margin="5dp"
             android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardImg"
-                    android:layout_width="400dp"
-                    android:layout_height="400dp" android:layout_gravity="center"
-                    android:src="@mipmap/ic_stub" />
+            <ImageView
+                android:id="@+id/cardImg"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_stub" />
         </LinearLayout>
 
         <TextView
@@ -260,6 +261,30 @@
                     android:textSize="@dimen/text_small" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/mechanicsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/mechanics"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardMechanics"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/mechanics"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
 
         </LinearLayout>
 

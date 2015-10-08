@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/debug/classes-a8ede944a00bcd729d45918d5156d09d7b5f4bfa.jar" />
+        sha1="b7760c9799d4842e39492efb0957ed62e4c7c57a">
+        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/debug/classes-56bb7eb2fdedeeba818b99f71f84d4aaf93b1d90.jar" />
     </item>
 
 </items>

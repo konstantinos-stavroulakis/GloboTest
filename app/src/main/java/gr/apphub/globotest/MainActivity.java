@@ -5,7 +5,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,8 +27,13 @@ import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
+
     ListView mListView;
+    GridView mGridView;
+
     ListAdapter mAdapter;
+    GridAdapter mGridAdapter;
+
     private ProgressDialog dialogfeed;
     private static final String TAG = MainActivity.class.getName();
     String url;
@@ -50,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOCALE = "locale";
     private static final String MECHANICS = "mechanics";
     JSONArray json = null;
-
+    boolean adapterChoice;
 
     //TODO comment ola ta Log.
 
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "**********onCreate();***********");
 
+        displaySharedPreferences();
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -72,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         ImageLoader.getInstance().init(config);
 
         mListView = (ListView) findViewById(R.id.lvItems);
+        mGridView = (GridView) findViewById(R.id.gridView1);
+
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.orange, R.color.green, R.color.blue);
@@ -82,11 +93,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        setListAdapter();
 //        startDownloadService();
-        setmAdapter();
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
+                entry.open();
+                String cid = entry.getCardIdFromPosition(position);
+                entry.close();
+
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("cardid", cid);
+                startActivity(intent);
+
+
+            }
+        });
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
@@ -147,9 +172,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(context, "Failed to download json",
                         Toast.LENGTH_LONG).show();
             }
-
-            setmAdapter();
-
+            if (!adapterChoice) {
+                setListAdapter();
+            } else {
+                setGridAdapter();
+            }
             mSwipeRefreshLayout.setRefreshing(false);
             Log.d("jsonReceiver", "mSwipeRefreshLayout hidden");
             setRefreshActionButtonstate(false);
@@ -159,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-    public void setmAdapter() {
+    public void setListAdapter() {
         DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
         entry.open();
         mAdapter = new ListAdapter(MainActivity.this, entry.getData());
@@ -168,12 +195,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setGridAdapter() {
+        DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
+        entry.open();
+        mGridAdapter = new GridAdapter(MainActivity.this, entry.getData());
+
+
+        mGridView.setAdapter(mGridAdapter);
+        entry.close();
+
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         Log.d(TAG, "***********onResume();***********");
-    }
+        displaySharedPreferences();
+        if (adapterChoice) {
 
+            if (mListView.getVisibility() != View.GONE) {
+                mSwipeRefreshLayout.setVisibility(View.GONE);
+                mListView.setVisibility(View.GONE);
+                mGridView.setVisibility(View.VISIBLE);
+                setGridAdapter();
+            }
+        } else {
+            if (mListView.getVisibility() != View.VISIBLE) {
+                mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+
+                mListView.setVisibility(View.VISIBLE);
+                mGridView.setVisibility(View.GONE);
+                setListAdapter();
+            }
+        }
+    }
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -182,16 +237,22 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_load:
                 setRefreshActionButtonstate(true);
                 DownloadJson();
                 return true;
+            case R.id.settings:
+
+                Intent intent = new Intent(MainActivity.this,
+                        PrefsActivity.class);
+                startActivity(intent);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
     public void setRefreshActionButtonstate(final boolean refreshing) {
@@ -206,5 +267,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+
+    private void displaySharedPreferences() {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(MainActivity.this);
+        adapterChoice = prefs.getBoolean("checkBox", false);
     }
 }

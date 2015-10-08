@@ -45,7 +45,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gr.apphub.globotest.MainActivity" />
         </activity>
-
+        <activity
+            android:name=".PrefsActivity"
+           >
+        </activity>
         <!-- Declaring Service in Manifest -->
         <service
             android:name=".DownloadService"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listOptions">
+        <item>List</item>
+        <item>Grid</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>l is selected</item>
+        <item>g is selected</item>
+    </string-array>
+</resources>

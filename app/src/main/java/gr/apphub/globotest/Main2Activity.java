@@ -2,12 +2,10 @@ package gr.apphub.globotest;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,7 +18,7 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 public class Main2Activity extends AppCompatActivity {
     private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
     private DisplayImageOptions options;
-    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET,FLAVOR;
+    String CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET, FLAVOR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +27,7 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Card Item");
 
 
         Bundle extras = getIntent().getExtras();
@@ -122,12 +121,22 @@ public class Main2Activity extends AppCompatActivity {
         TextView cardATTACK = (TextView) findViewById(R.id.cardAttack);
         cardATTACK.setText(ATTACK);
 
-        TextView cardHealth= (TextView) findViewById(R.id.cardHealth);
+        TextView cardHealth = (TextView) findViewById(R.id.cardHealth);
         cardHealth.setText(HEALTH);
 
 
-        TextView cardId= (TextView) findViewById(R.id.cardId);
+        TextView cardId = (TextView) findViewById(R.id.cardId);
         cardId.setText(CARDID);
+
+
+        LinearLayout mechanicsLayout = (LinearLayout) findViewById(R.id.mechanicsLayout);
+        TextView cardMechanics = (TextView) findViewById(R.id.cardMechanics);
+
+        if (!MECHANICS.equals("-")) {
+            cardMechanics.setText(MECHANICS);
+        } else {
+            mechanicsLayout.setVisibility(View.GONE);
+        }
 
 
         ImageView im1 = (ImageView) findViewById(R.id.cardImg);
@@ -137,15 +146,5 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 }

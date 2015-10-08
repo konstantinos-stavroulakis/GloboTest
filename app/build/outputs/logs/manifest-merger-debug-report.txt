@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:1-58:12
 	xmlns:android
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -26,12 +26,15 @@ ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/Andr
 	android:name
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:9:22-76
 application
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:11:5-53:19
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:11:5-56:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.lsjwzh:materialloadingprogressbar:0.5.6-RELEASE] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
 	android:supportsRtl
@@ -94,12 +97,16 @@ ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/Andr
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:45:17-63
 	android:value
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:46:17-65
-service#gr.apphub.globotest.DownloadService
-ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:50:9-52:66
-	android:configChanges
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:52:13-63
+activity#gr.apphub.globotest.PrefsActivity
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:48:9-51:20
 	android:name
-		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:51:13-44
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:49:13-42
+service#gr.apphub.globotest.DownloadService
+ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:53:9-55:66
+	android:configChanges
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:55:13-63
+	android:name
+		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:54:13-44
 uses-sdk
 INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
@@ -107,6 +114,9 @@ MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/Androids
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:20:5-43
+MERGED from [com.lsjwzh:materialloadingprogressbar:0.5.6-RELEASE] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
