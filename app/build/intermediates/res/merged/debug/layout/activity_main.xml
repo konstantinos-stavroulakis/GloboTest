@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:divider="#826e59"
+            android:divider="@color/divider"
             android:dividerHeight="2dp"></ListView>
     </android.support.v4.widget.SwipeRefreshLayout>
 

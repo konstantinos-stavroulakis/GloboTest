@@ -2,13 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory
-        android:summary="Username and password information"
+        android:summary="App Settings"
         android:title="Settings" >
         <CheckBoxPreference
             android:key="checkBox"
             android:summary="GridView/ListView"
             android:title="Use GridView" />
-
-
     </PreferenceCategory>
+
 </PreferenceScreen>

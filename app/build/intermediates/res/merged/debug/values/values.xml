@@ -72,7 +72,7 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="divider">#B6B6B6</color>
+    <color name="divider">#826e59</color>
     <!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="foreground_material_dark">@android:color/white</color>
