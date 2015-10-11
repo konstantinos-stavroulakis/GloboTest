@@ -63,7 +63,6 @@ public class Main2Activity extends AppCompatActivity {
         HOWTOGET = c.getString(c.getColumnIndex(DatabaseActivity.DBHelper.HOWTOGET));
         FLAVOR = c.getString(c.getColumnIndex(DatabaseActivity.DBHelper.FLAVOR));
 
-//        Log.d("img",image);
 
         options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.mipmap.ic_stub)
@@ -147,9 +146,7 @@ public class Main2Activity extends AppCompatActivity {
 
         ImageView im1 = (ImageView) findViewById(R.id.cardImg);
         ImageLoader.getInstance().displayImage(IMG, im1, options, animateFirstListener);
-//        YoYo.with(Techniques.ZoomIn)
-//                .duration(700)
-//                .playOn(findViewById(R.id.cardImg));
+
         entry.close();
 
     }

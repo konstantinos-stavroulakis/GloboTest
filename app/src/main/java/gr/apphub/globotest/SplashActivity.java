@@ -2,6 +2,7 @@ package gr.apphub.globotest;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Window;
@@ -30,16 +32,16 @@ public class SplashActivity extends Activity {
 
         setContentView(R.layout.splash);
 
-
+// use conMgr in order to check id internet connection is active
         conMgr = (ConnectivityManager) this
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (conMgr.getActiveNetworkInfo() != null) {
-
+// if internet connection is active
             startDownloadService();
 
         } else {
-
+//if internet connection is disabled
 
 
             Toast.makeText(this, getString(R.string.nointernet), Toast.LENGTH_LONG).show();
@@ -63,6 +65,7 @@ public class SplashActivity extends Activity {
                         } catch (InterruptedException e) {
                             // do nothing
                         } finally {
+                            //finish splash screen and move to MainActivity.class
                             finish();
                             goToMainActivity();
 
@@ -128,35 +131,52 @@ public class SplashActivity extends Activity {
 
     @Override
     public void onDestroy() {
-        try {
+        super.onDestroy();
 
+        try {
             unregisterReceiver(jsonReceiver);
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
-        super.onDestroy();
 
     }
 
     public void goToMainActivity() {
         finish();
         Intent i2 = new Intent(SplashActivity.this, MainActivity.class);
-        i2.putExtra("url",url);
+        //pass the url via intent
+        i2.putExtra("url", url);
         startActivity(i2);
     }
 
     public void noDataDialog() {
+        //pop up an alert dialog to notify user that the app needs internet connection for the first time opening
         AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
-        alertDialog.setTitle("Sorry");
+        alertDialog.setTitle("First time use");
         alertDialog.setMessage("Please enable internet connection and retry!");
 
-        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+
+
+        alertDialog.setButton(Dialog.BUTTON_NEGATIVE, "EXIT", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 finish();
+
             }
         });
 
-        alertDialog.show();  //<-- See This!
+        alertDialog.setButton(Dialog.BUTTON_POSITIVE, "SETTINGS", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+
+
+            }
+        });
+
+
+        alertDialog.show();
+        //the app finishes and the user have to enable internet connection and retry
+
     }
 
 }

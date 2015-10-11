@@ -52,13 +52,14 @@ public class DownloadService extends IntentService {
 
         if (jsonStr != null) {
             try {
+                //the reply is a json array
                 JSONArray jsonArray = new JSONArray(jsonStr);
-                // Log.d("jsonArray.length()", Integer.toString(jsonArray.length()));
 
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    //TODO add if(.has()) everywhere
+                    //we get every json object from this jsons array
                     JSONObject jObj = jsonArray.getJSONObject(i);
 
+                    //and we check if this object has a specific value
                     if (jObj.has("cardId")) {
                         CARDID = jObj.getString("cardId");
                     } else {
@@ -181,7 +182,6 @@ public class DownloadService extends IntentService {
 
                             }
                         }
-//                        MECHANICS  = jObj.getString("mechanics");
                     } else {
                         MECHANICS  = "-";
                     }
@@ -199,7 +199,7 @@ public class DownloadService extends IntentService {
                         FLAVOR = "-";
                     }
 
-
+                    //add data to local database
                     addToDatabase(CARDID, NAME, CARDSET, TYPE, FACTION, RARITY, COST, ATTACK, HEALTH, TEXT, ARTIST, COLLECTIBLE, ELITE, IMG, IMGGOLD, LOCALE, MECHANICS, HOWTOGET, FLAVOR);
 
                 }
@@ -207,12 +207,14 @@ public class DownloadService extends IntentService {
                 e.printStackTrace();
             }
 
+            //notify that the job has finished
             notifyFinished("location", url);
 
         }
     }
 
     public void addToDatabase(String cardid, String name, String cardset, String type, String faction, String rarity, String cost, String attack, String health, String text, String artist, String collectible, String elit, String img, String imggold, String locale, String mechanics, String howToGet, String flavor) {
+       //1)open db 2)check if cardid exists (we take as a fact that cardid is unique) 3)if not exist then add a new db entry
         DatabaseActivity entry = new DatabaseActivity(DownloadService.this);
         entry.open();
         if (entry.Exists(cardid, name)) {

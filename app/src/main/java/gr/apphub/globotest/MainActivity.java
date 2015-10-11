@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     JSONArray json = null;
     boolean adapterChoice;
 
+
     //TODO comment ola ta Log.
 
     @Override
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "**********onCreate();***********");
+        Log.d(TAG, "onCreate();");
 
         conMgr = (ConnectivityManager) this
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -158,14 +159,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
-        // TODO Auto-generated method stub
-
+        super.onDestroy();
         try {
             unregisterReceiver(jsonReceiver);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        super.onDestroy();
 
     }
 
@@ -218,10 +217,10 @@ public class MainActivity extends AppCompatActivity {
     public void setGridAdapter() {
         DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
         entry.open();
+
         mGridAdapter = new GridAdapter(MainActivity.this, entry.getData());
-
-
         mGridView.setAdapter(mGridAdapter);
+
         entry.close();
 
     }
@@ -229,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(TAG, "***********onResume();***********");
+        Log.d(TAG, "onResume();");
         displaySharedPreferences();
         if (adapterChoice) {
 
@@ -242,7 +241,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             if (mListView.getVisibility() != View.VISIBLE) {
                 mSwipeRefreshLayout.setVisibility(View.VISIBLE);
-
                 mListView.setVisibility(View.VISIBLE);
                 mGridView.setVisibility(View.GONE);
                 setListAdapter();

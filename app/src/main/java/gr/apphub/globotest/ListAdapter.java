@@ -25,6 +25,8 @@ public class ListAdapter extends CursorAdapter {
     public ListAdapter(Context context, Cursor cursor) {
         super(context, cursor);
 
+        //DisplayImageOptions are local for every display task (ImageLoader.displayImage(...))
+        //https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Display-Options
         options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.mipmap.ic_stub)
                 .showImageForEmptyUri(R.drawable.ic_empty)
@@ -35,6 +37,7 @@ public class ListAdapter extends CursorAdapter {
                 .build();
     }
 
+    //view is created in newView() (simply inflate the view your custom xml and return it)
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
 
@@ -49,6 +52,7 @@ public class ListAdapter extends CursorAdapter {
         return convertView;
     }
 
+    //elements are populated in bindView() (set the elements of your view)
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
 
@@ -64,10 +68,11 @@ public class ListAdapter extends CursorAdapter {
 
 }
 
+//A ViewHolder object stores each of the component views inside the tag field of the Layout, so you can immediately access them without the need to look them up repeatedly.
+//so you can easily access each view without the need for the look-up, saving valuable processor cycles
 class ViewHolder {
     TextView cardId;
     TextView cardName;
-
     ImageView image;
 
 }
