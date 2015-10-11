@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     GridAdapter mGridAdapter;
 
     private ProgressDialog dialogfeed;
+
     private static final String TAG = MainActivity.class.getName();
+    
     String url;
 
     private Menu optionsMenu;
