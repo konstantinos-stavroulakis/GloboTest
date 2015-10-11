@@ -1,5 +1,5 @@
 # GloboTest
-Third party libraries uses:
+Third party libraries used:
 
 1) Universal Image Loader : https://github.com/nostra13/Android-Universal-Image-Loader
 
