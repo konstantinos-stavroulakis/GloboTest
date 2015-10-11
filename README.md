@@ -1,5 +1,5 @@
 # GloboTest
-Οι βιβλιοθήκες που χρησιμοποιήθηκαν στην εφαρμογή είναι:
+Third party libraries uses:
 
 1) Universal Image Loader : https://github.com/nostra13/Android-Universal-Image-Loader
 
@@ -11,4 +11,6 @@ Extra points
 
 - The app is optimized for phones and tablets.
 
-- The app provides ways to refresh the object list (swipe-refresh and refresh button)
+- The app provides ways to refresh the object list (pull-to-refresh and refresh button)
+
+- Able to switch from gridview to listview (and back) from setting screen.

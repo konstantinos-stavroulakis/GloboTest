@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog dialogfeed;
 
     private static final String TAG = MainActivity.class.getName();
-    
+
     String url;
 
     private Menu optionsMenu;
