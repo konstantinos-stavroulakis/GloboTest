@@ -13,4 +13,4 @@ Extra points
 
 - The app provides ways to refresh the object list (pull-to-refresh and refresh button)
 
-- Able to switch from gridview to listview (and back) from setting screen.
+- Able to switch from gridview to listview (and back) from settings screen.
