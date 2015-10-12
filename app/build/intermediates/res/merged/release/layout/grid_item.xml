@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/listbtnselector"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <ImageView android:layout_gravity="center"
+        android:id="@+id/listItemCardImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+       />
+
+    <!--<TextView-->
+        <!--android:id="@+id/listItemCardName"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:text="New Text"-->
+        <!--android:textColor="@color/primary_text"-->
+        <!--android:textSize="@dimen/text_large"-->
+        <!--android:textStyle="bold" />-->
+
+    <TextView
+        android:id="@+id/listItemCardId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+
+        android:text="New Text"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_xsmall" />
+
+
+</LinearLayout>
+<!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/layout/grid_item.xml -->

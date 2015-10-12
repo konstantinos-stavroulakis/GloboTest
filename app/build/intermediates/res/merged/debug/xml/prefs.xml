@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:summary="App Settings"
+        android:title="Settings" >
+        <CheckBoxPreference
+            android:key="checkBox"
+            android:summary="GridView/ListView"
+            android:title="Use GridView" />
+    </PreferenceCategory>
+
+</PreferenceScreen><!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/xml/prefs.xml -->

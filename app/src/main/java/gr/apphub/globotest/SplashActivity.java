@@ -150,6 +150,9 @@ public class SplashActivity extends Activity {
     }
 
     public void noDataDialog() {
+
+
+
         //pop up an alert dialog to notify user that the app needs internet connection for the first time opening
         AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
         alertDialog.setTitle("First time use");

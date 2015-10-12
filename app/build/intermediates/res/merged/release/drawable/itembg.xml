@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<gradient-->
+    <!--android:angle="-90"-->
+    <!--android:centerColor="#b2392d"-->
+    <!--android:endColor="#982219"-->
+    <!--android:startColor="#be4f42" />-->
+
+    <solid android:color="@color/colorAccent" />
+    <corners android:radius="10dp" />
+    <!--<stroke-->
+        <!--android:width="2dp"-->
+        <!--android:color="@color/colorAccent2" />-->
+</shape><!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/drawable/itembg.xml -->

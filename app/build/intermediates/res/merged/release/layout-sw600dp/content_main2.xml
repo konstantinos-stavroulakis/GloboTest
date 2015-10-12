@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent0"
+
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="gr.apphub.globotest.Main2Activity"
+    tools:showIn="@layout/activity_main2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/cardImg"
+                android:layout_width="600dp"
+                android:layout_height="600dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_stub" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cardName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/name"
+            android:textColor="@color/nameColor"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cardText"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_small" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/itembg"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/rarity"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+
+                <TextView
+                    android:id="@+id/cardRarity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/rarity"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/type"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/type"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/set"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardSet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/set"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/collectible"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardCollectible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/collectible"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/howToGetLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/howToGet"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardhowToGet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/howToGet"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/flavor"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardFlavor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/flavor"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/elite"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardElit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/elite"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/artist"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/artist"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mechanicsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/mechanics"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardMechanics"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/mechanics"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/itembg"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/cost"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardCost"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/cost"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/attack"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardAttack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/attack"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/health"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/cardHealth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/health"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/id"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_xsmall" />
+
+            <TextView
+                android:id="@+id/cardId"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:text="@string/id"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_xsmall" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+<!-- From: file:/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/res/layout-sw600dp/content_main2.xml -->
