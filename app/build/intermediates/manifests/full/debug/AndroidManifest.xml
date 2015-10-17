@@ -56,6 +56,9 @@
         <service
             android:name="gr.apphub.globotest.DownloadService"
             android:configChanges="keyboardHidden|orientation" />
+
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity" />
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity" />
     </application>
 
 </manifest>

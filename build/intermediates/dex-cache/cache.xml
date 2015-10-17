@@ -2,53 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="/Users/Konstantinos/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/internal_impl-23.0.1-4f697da992311e58712b8e9081b5011f2d703f17.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/classes-b8d7acf9ba973a8f4a876253a259ba5557b3e3ce.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/Documents/adt-bundle-mac-x86_64-20140624/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/support-annotations-23.0.1-2fadd014d3f1ad38742da36c66c28d274ae70fdd.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b7760c9799d4842e39492efb0957ed62e4c7c57a">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/classes-56bb7eb2fdedeeba818b99f71f84d4aaf93b1d90.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.4/dd9eeb557650c4ad7394df23f0f5cf27a7cfc697/universal-image-loader-1.9.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/universal-image-loader-1.9.4-6569ea85295ab154952085e7038a0dcdd0c3dcf4.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/classes-a8ede944a00bcd729d45918d5156d09d7b5f4bfa.jar" />
-    </item>
-    <item
-        jar="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/release/classes-bfbde1cdb2f4d2eadd7b9105de8305757a2b5148.jar" />
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/pre-dexed/debug/library-2.4.0-528b10cb00c518f080e79d4a50b747276d5855b7.jar" />
     </item>
 
 </items>

@@ -37,6 +37,9 @@ MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/Androids
 MERGED from [com.lsjwzh:materialloadingprogressbar:0.5.6-RELEASE] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.nhaarman.listviewanimations:lib-core:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core/3.1.0/AndroidManifest.xml:26:5-27:19
+MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:26:5-29:19
+MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:26:5-27:19
 	android:supportsRtl
 		ADDED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
@@ -119,9 +122,20 @@ MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/Androids
 MERGED from [com.lsjwzh:materialloadingprogressbar:0.5.6-RELEASE] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.lsjwzh/materialloadingprogressbar/0.5.6-RELEASE/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.0.1] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/AndroidManifest.xml:20:5-43
+MERGED from [com.nhaarman.listviewanimations:lib-core:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core/3.1.0/AndroidManifest.xml:22:5-24:41
+MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:22:5-24:41
+MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:22:5-24:41
 	android:targetSdkVersion
 		INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/src/main/AndroidManifest.xml
+activity#com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity
+ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:27:9-129
+	android:name
+		ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:27:19-126
+activity#com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity
+ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:28:9-122
+	android:name
+		ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/Konstantinos/AndroidstudioProjects/GloboTest/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:28:19-119

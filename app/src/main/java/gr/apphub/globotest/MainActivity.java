@@ -21,6 +21,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -210,8 +211,13 @@ public class MainActivity extends AppCompatActivity {
     public void setListAdapter() {
         DatabaseActivity entry = new DatabaseActivity(MainActivity.this);
         entry.open();
+
         mAdapter = new ListAdapter(MainActivity.this, entry.getData());
-        mListView.setAdapter(mAdapter);
+        AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(mAdapter);
+        animationAdapter.setAbsListView(mListView);
+        mListView.setAdapter(animationAdapter);
+
+
         entry.close();
 
     }
